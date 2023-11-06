@@ -1,3 +1,18 @@
 h1 {
 	color: red;
 }
+
+.product-form {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.form_group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+button {
+	margin-top: 20px;
+}

@@ -1,9 +1,9 @@
-import homeControllers from '../app/controllers/homeControllers.js';
-import productControllers from '../app/controllers/productControllers.js';
+import productRoutes from './product.js';
+import siteRoutes from './site.js';
 
 function routes(app) {
-	app.use('/product', productControllers.index);
-	app.use('/', homeControllers.index);
+	app.use('/product', productRoutes);
+	app.use('/', siteRoutes);
 }
 
 export default routes;
