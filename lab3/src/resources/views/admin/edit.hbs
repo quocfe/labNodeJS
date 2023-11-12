@@ -1,0 +1,62 @@
+<nav class='navbar navbar-expand-lg bg-body-tertiary'>
+  <div class='container-fluid'>
+
+    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+      <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+        <li class='nav-item'>
+          <a class='nav-link active' href='/'>Poly Book Store</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='/admin/add'>Thêm mới</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='/admin/products'>Danh sách sản phẩm</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<form class='product-form' action='/admin/products/{{data.product.idProduct}}?_method=PUT' method='post'
+  enctype='multipart/form-data'>
+  <div class='form_group'>
+    <label for=''>nameProduct </label>
+    <input type='text' name='nameProduct' value="{{data.product.nameProduct}}" />
+  </div>
+  <div class='form_group'>
+    <label for=''>sortDescription </label>
+    <input type='text' name='sortDescription' value="{{data.product.sortDescription}}" />
+  </div>
+  <div class='form_group'>
+    <label for=''>Hình ảnh </label>
+    <input type='file' name='uploadImg' value='uploadImg' />
+  </div>
+  <div class='form_group'>
+    <label for=''>description </label>
+    <input type='text' name='description' value="{{data.product.description}}" />
+  </div>
+  <div class='form_group'>
+    <label for=''>priceProduct </label>
+    <input type='text' name='priceProduct' value="{{data.product.priceProduct}}" />
+  </div>
+  <div class='form_group'>
+    <label for=''>authorProduct </label>
+    <input type='text' name='authorProduct' value="{{data.product.authorProduct}}" />
+  </div>
+  <div class='form_group'>
+    <label for=''>Category </label>
+    <select name='category'>
+      <option selected>{{data.categoryName}}</option>
+      {{#each data.categorys}}
+      <option value={{this.idCategory}}>{{this.nameCategory}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <button type='submit' class='btn btn-primary'>Save</button>
+</form>
+
+<script>
+
+</script>
