@@ -1,0 +1,96 @@
+<nav class='navbar navbar-expand-lg bg-body-tertiary'>
+	<div class='container-fluid'>
+		<div class='collapse navbar-collapse' id='navbarSupportedContent'>
+			<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+				<li class='nav-item'>
+					<a class='nav-link active' href='/'>Poly Book Store</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='/admin/add'>Thêm mới</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='/admin/products'>Danh sách sản phẩm</a>
+				</li>
+
+			</ul>
+
+		</div>
+	</div>
+</nav>
+<form
+	class='product-form mt-2'
+	action='/admin/products/{{data.product.idProduct}}?_method=patch'
+	{{! enctype='multipart/form-data' }}
+	method='POST'
+>
+	<div class='form-group mb-2'>
+		<label for=''>nameProduct </label>
+		<input
+			class='form-control'
+			type='text'
+			name='nameProduct'
+			value='{{data.product.nameProduct}}'
+		/>
+	</div>
+	<div class='form-group mb-2'>
+		<label for=''>sortDescription </label>
+		<input
+			class='form-control'
+			type='text'
+			name='sortDescription'
+			value='{{data.product.sortDescription}}'
+		/>
+	</div>
+	<div class='form-group mb-2'>
+		<label for=''>Hình ảnh </label>
+		{{! <input
+			class='form-control'
+			type='file'
+			name='uploadImg'
+			value='uploadImg'
+		/> }}
+		<input type='hidden' name='imagesOld' value='{{data.product.images}}' />
+	</div>
+	<div class='form-group mb-2'>
+		<label for=''>description </label>
+		<input
+			class='form-control'
+			type='text'
+			name='description'
+			value='{{data.product.description}}'
+		/>
+	</div>
+	<div class='form-group mb-2'>
+		<label for=''>priceProduct </label>
+		<input
+			class='form-control'
+			type='text'
+			name='priceProduct'
+			value='{{data.product.priceProduct}}'
+		/>
+	</div>
+	<div class='form-group mb-2'>
+		<label for=''>authorProduct </label>
+		<input
+			class='form-control'
+			type='text'
+			name='authorProduct'
+			value='{{data.product.authorProduct}}'
+		/>
+	</div>
+	<div class='form-group mb-2'>
+		<label for=''>Category </label>
+		<select name='category'>
+			<option selected>{{data.categoryName}}</option>
+			{{#each data.categorys}}
+				<option value={{this.idCategory}}>{{this.idCategory}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+	<button type='submit' class='btn btn-primary'>Save</button>
+</form>
+
+<script>
+
+</script>

@@ -1,0 +1,109 @@
+<nav class='navbar navbar-expand-lg bg-body-tertiary'>
+	<div class='container-fluid'>
+
+		<div class='collapse navbar-collapse' id='navbarSupportedContent'>
+			<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+				<li class='nav-item'>
+					<a class='nav-link active' href='/'>Poly Book Store</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='/shop'>Tất cả</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='/shop/1'>Sách trẻ em</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='/shop/2'>Doanh nhân</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='/shop/3'>Văn chương</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='/shop/4'>Âm nhạc</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='/shop/5'>Sách giáo khoa</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='/blog'>Bài viết</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</nav>
+<div class='container mt-4'>
+	<div class='row'>
+		{{#each products}}
+			<div class='col-md-4 mb-3'>
+				<div class='card h-100'>
+					<div class='d-flex justify-content-between position-absolute w-100'>
+						<div class='label-new'>
+							<span
+								class='text-white bg-success small d-flex align-items-center px-2 py-1'
+							>
+								<i class='fa fa-star' aria-hidden='true'></i>
+								<span class='ml-1'>New</span>
+							</span>
+						</div>
+						<div class='label-sale'>
+							<span
+								class='text-white bg-primary small d-flex align-items-center px-2 py-1'
+							>
+								<i class='fa fa-tag' aria-hidden='true'></i>
+								<span class='ml-1'>Sale</span>
+							</span>
+						</div>
+					</div>
+					<a href='/product/id={{this.id}}'>
+						<img src='{{this.images}}' class='card-img-top' alt='Product' />
+					</a>
+					<div class='card-body px-2 pb-2 pt-1'>
+						<div class='d-flex justify-content-between'>
+							<div>
+								<p class='h4 text-primary'>{{this.priceProduct}}VND</p>
+							</div>
+							<div>
+								<a
+									href='#'
+									class='text-secondary lead'
+									data-toggle='tooltip'
+									data-placement='left'
+									title='Compare'
+								>
+									<i class='fa fa-line-chart' aria-hidden='true'></i>
+								</a>
+							</div>
+						</div>
+						<p class='text-warning d-flex align-items-center mb-2'>
+							<i class='fa fa-star' aria-hidden='true'></i>
+							<i class='fa fa-star' aria-hidden='true'></i>
+							<i class='fa fa-star' aria-hidden='true'></i>
+							<i class='fa fa-star' aria-hidden='true'></i>
+							<i class='fa fa-star' aria-hidden='true'></i>
+						</p>
+						<p class='mb-0'>
+							<strong>
+								<a href='#' class='text-secondary'>{{this.nameProduct}}</a>
+							</strong>
+						</p>
+
+						<div class='d-flex mb-3 justify-content-between'>
+							<a href='#' class='text-secondary'>{{this.sortDescription}}</a>
+						</div>
+						<div class='d-flex justify-content-between'>
+							<div class='col px-0'>
+								<button class='btn btn-outline-primary btn-block'>
+									Add To Cart
+									<i class='fa fa-shopping-basket' aria-hidden='true'></i>
+								</button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+
+	</div>
+</div>
